@@ -52,6 +52,9 @@ return [
             'prefix' => '',
             'strict' => true,
             'engine' => null,
+            'dump' => [
+                'dump_binary_path' => env('MYSQLDUMP_PATH'),
+            ]
         ],
 
         'pgsql' => [
