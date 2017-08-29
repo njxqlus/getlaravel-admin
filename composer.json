@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "njxqlus/getlaravel",
+    "description": "Laravel starter kit with admin",
+    "keywords": ["framework", "laravel", "laravel-starter", "laravel-adminlte"],
     "license": "MIT",
     "type": "project",
     "require": {
