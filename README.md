@@ -4,27 +4,39 @@
 
 ## What's inside?
 
-1) Laravel 5.5 dev version
+- Laravel 5.5 dev version
 
-1) Fix "1071 Specified key was too long; max key length is 767 bytes" error
+- Fix "1071 Specified key was too long; max key length is 767 bytes" error
 
-1) Move Uses Model to Models folder and App\Models namespace
+- Move Uses Model to Models folder and App\Models namespace
 
-1) santigarcor/laratrust:4.0.* and setup it
+- santigarcor/laratrust:4.0.* and setup it
 
-1) barryvdh/laravel-debugbar:~3.0
+- barryvdh/laravel-debugbar:~3.0
 
-1) make:auth
+- make:auth
 
-1) spatie/laravel-backup:dev-laravel-55 and setup it
+- spatie/laravel-backup:dev-laravel-55 and setup it
 
-1) Russian traslatian for default Laravel lang files
+- Russian traslatian for default Laravel lang files
 
-1) `php artisan preset none`
+- `php artisan preset none`
 
-1) barryvdh/laravel-ide-helper and setup it 
+- barryvdh/laravel-ide-helper and setup it 
 
 ## Installation
+
+### Via Composer
+
+1) `composer create-project njxqlus/getlaravel myproject`
+
+1) `npm install`
+
+1) Setup database
+
+1) `php artisan migrate`
+
+### Via git clone
 
 1) `git clone https://github.com/njxqlus/getlaravel-admin.git myproject`
 
