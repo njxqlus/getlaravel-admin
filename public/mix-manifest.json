@@ -1,0 +1,6 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/vendor/jquery/jquery.min.js": "/vendor/jquery/jquery.min.js",
+    "/vendor/icheck/icheck.min.js": "/vendor/icheck/icheck.min.js"
+}
