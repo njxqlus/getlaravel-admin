@@ -12,9 +12,27 @@
 */
 
 
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 Route::view('/', 'welcome');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/cp', 'CPController@index')->name('cp');
+
+Route::group(['prefix' => 'cp'], function(){
+
+	Route::get('/', 'CPController@index')->name('cp');
+
+	Route::group(['prefix' => 'rbac'], function(){
+
+		Route::resource('roles', 'CP\RBAC\RoleController');
+
+		Route::resource('permissions', 'CP\RBAC\PermissionController');
+
+	});
+
+    Route::resource('users', 'CP\UserController');
+});

@@ -30,20 +30,26 @@
 
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
-            <li class="header">HEADER</li>
-            <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-            <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-            <li class="treeview">
-                <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+            <!-- RBAC -->
+            <li class="header">@lang('RBAC')</li>
+            <li>
+                <a href="{{ action('CP\RBAC\RoleController@index') }}">
+                    <i class="fa fa-users"></i> <span>@lang('cp.roles')</span>
                 </a>
-                <ul class="treeview-menu">
-                    <li><a href="#">Link in level 2</a></li>
-                    <li><a href="#">Link in level 2</a></li>
-                </ul>
+            </li>
+            <li>
+                <a href="{{ action('CP\RBAC\PermissionController@index') }}">
+                    <i class="fa fa-lock"></i> <span>@lang('cp.permissions')</span>
+                </a>
+            </li>
+            <li>
+                <hr>
+            </li>
+            <li>
+                <a href="{{ action('CP\UserController@index') }}">
+                    <i class="fa fa-user"></i> <span>@lang('cp.users')</span>
+                    <span class = "badge pull-right label-info">{{ App\Models\User::count() }}</span>
+                </a>
             </li>
         </ul>
         <!-- /.sidebar-menu -->
