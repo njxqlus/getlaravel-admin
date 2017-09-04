@@ -32,23 +32,29 @@
         <ul class="sidebar-menu">
             <!-- RBAC -->
             <li class="header">@lang('RBAC')</li>
-            <li>
-                <a href="{{ action('CP\RBAC\RoleController@index') }}">
-                    <i class="fa fa-users"></i> <span>@lang('cp.roles')</span>
+            <li class="treeview">
+                <a href="#"><i class="fa fa-lock"></i> <span>RBAC</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
                 </a>
-            </li>
-            <li>
-                <a href="{{ action('CP\RBAC\PermissionController@index') }}">
-                    <i class="fa fa-lock"></i> <span>@lang('cp.permissions')</span>
-                </a>
-            </li>
-            <li>
-                <hr>
+                <ul class="treeview-menu">
+                    <li>
+                        <a href="{{ action('CP\RBAC\RoleController@index') }}">
+                            <span>@lang('cp.roles')</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ action('CP\RBAC\PermissionController@index') }}">
+                            <span>@lang('cp.permissions')</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a href="{{ action('CP\UserController@index') }}">
                     <i class="fa fa-user"></i> <span>@lang('cp.users')</span>
-                    <span class = "badge pull-right label-info">{{ App\Models\User::count() }}</span>
+                    <span class="badge pull-right label-info">{{ App\Models\User::count() }}</span>
                 </a>
             </li>
         </ul>
