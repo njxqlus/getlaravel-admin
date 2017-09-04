@@ -49,7 +49,7 @@ class RoleController extends Controller {
      */
     public function show(Role $role)
     {
-        //
+        return view('cp.rbac.roles.show', compact('role'));
     }
 
     /**

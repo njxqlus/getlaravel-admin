@@ -49,7 +49,7 @@ class PermissionController extends Controller {
      */
     public function show(Permission $permission)
     {
-        //
+        return view('cp.rbac.permissions.show', compact('permission'));
     }
 
     /**
