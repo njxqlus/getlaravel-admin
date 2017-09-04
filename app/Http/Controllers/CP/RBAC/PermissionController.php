@@ -17,11 +17,7 @@ class PermissionController extends Controller {
     {
         $collection = Permission::all();
 
-        $fields = Permission::showable();
-
-        $title = Permission::name(true);
-
-        return view('cp.models.index', compact('collection', 'fields', 'title'));
+        return view('cp.rbac.permissions.index', compact('collection'));
     }
 
     /**

@@ -24,7 +24,7 @@
 
             @endforeach
 
-            @include('cp.models.table.actions', ['item' => $item])
+            @include('cp.parts.table.actions', ['item' => $item])
 
         </tr>
 

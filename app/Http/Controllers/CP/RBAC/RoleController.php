@@ -17,11 +17,7 @@ class RoleController extends Controller {
     {
         $collection = Role::all();
 
-        $fields = Role::showable();
-
-        $title = Role::name(true);
-
-        return view('cp.models.index', compact('collection', 'fields', 'title'));
+        return view('cp.rbac.roles.index', compact('collection'));
     }
 
     /**

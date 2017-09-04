@@ -17,11 +17,7 @@ class UserController extends Controller {
     {
         $collection = User::all();
 
-        $fields = User::showable();
-
-        $title = User::name(true);
-
-        return view('cp.models.index', compact('collection', 'fields', 'title'));
+        return view('cp.users.index', compact('collection'));
     }
 
     /**
