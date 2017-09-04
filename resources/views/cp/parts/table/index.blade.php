@@ -8,7 +8,7 @@
 
         @endforeach
 
-        <th>@lang('cp.table-actions')</th>
+        <th>@lang('cp.table_actions')</th>
 
     </tr>
     </thead>
