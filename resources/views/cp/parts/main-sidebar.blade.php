@@ -31,9 +31,8 @@
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
             <!-- RBAC -->
-            <li class="header">@lang('RBAC')</li>
             <li class="treeview">
-                <a href="#"><i class="fa fa-lock"></i> <span>RBAC</span>
+                <a href="#"><i class="fa fa-lock"></i> <span>@lang('cp.rbac')</span>
                     <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
