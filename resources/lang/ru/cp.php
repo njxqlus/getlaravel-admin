@@ -42,4 +42,6 @@ return [
     'edit'                        => 'Изменить',
     'delete'                      => 'Удалить',
     'confirm_destroy'             => 'Вы уверены?',
+    'footer_right'                => 'Все, что захотите',
+    'footer_copyright'            => 'Все права защищены',
 ];
