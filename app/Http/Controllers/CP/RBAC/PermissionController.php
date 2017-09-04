@@ -6,8 +6,8 @@ use App\Models\RBAC\Permission;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class PermissionController extends Controller
-{
+class PermissionController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +15,13 @@ class PermissionController extends Controller
      */
     public function index()
     {
-        return view('cp.rbac.permissions.index');
+        $collection = Permission::all();
+
+        $fields = Permission::showable();
+
+        $title = Permission::name(true);
+
+        return view('cp.models.index', compact('collection', 'fields', 'title'));
     }
 
     /**
@@ -31,7 +37,7 @@ class PermissionController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -42,7 +48,7 @@ class PermissionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\RBAC\Permission  $permission
+     * @param  \App\Models\RBAC\Permission $permission
      * @return \Illuminate\Http\Response
      */
     public function show(Permission $permission)
@@ -53,7 +59,7 @@ class PermissionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\RBAC\Permission  $permission
+     * @param  \App\Models\RBAC\Permission $permission
      * @return \Illuminate\Http\Response
      */
     public function edit(Permission $permission)
@@ -64,8 +70,8 @@ class PermissionController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\RBAC\Permission  $permission
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Models\RBAC\Permission $permission
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Permission $permission)
@@ -76,7 +82,7 @@ class PermissionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\RBAC\Permission  $permission
+     * @param  \App\Models\RBAC\Permission $permission
      * @return \Illuminate\Http\Response
      */
     public function destroy(Permission $permission)

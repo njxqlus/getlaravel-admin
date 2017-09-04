@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "242ea069da8e5f6f6878ecd27e09c6b9",
+    "content-hash": "b6510c4e5727f6b9b7178ccdd0d9ae7f",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1435,6 +1435,51 @@
                 "php"
             ],
             "time": "2017-07-28T14:45:09+00:00"
+        },
+        {
+            "name": "njxqlus/laravel-helpers",
+            "version": "0.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/njxqlus/laravel-helpers.git",
+                "reference": "f43d22540eb5921fcfd57c49f363ea5e579fcfd0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/njxqlus/laravel-helpers/zipball/f43d22540eb5921fcfd57c49f363ea5e579fcfd0",
+                "reference": "f43d22540eb5921fcfd57c49f363ea5e579fcfd0",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.*",
+                "php": ">=5.6.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "njxqlus\\LaravelHelpers\\": "src",
+                    "njxqlus\\LaravelHelpers\\Traits\\": "src/Traits"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mikael Agabalyants",
+                    "email": "njxqlus@gmail.com"
+                }
+            ],
+            "description": "Laravel helper functions",
+            "keywords": [
+                "helpers",
+                "laravel"
+            ],
+            "time": "2017-09-04T11:08:51+00:00"
         },
         {
             "name": "paragonie/random_compat",

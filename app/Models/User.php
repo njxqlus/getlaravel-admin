@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laratrust\Traits\LaratrustUserTrait;
+use njxqlus\LaravelHelpers\Traits\ModelHelper;
 
-class User extends Authenticatable
-{
+class User extends Authenticatable {
+
     use LaratrustUserTrait;
     use Notifiable;
+    use ModelHelper;
 
     /**
      * The attributes that are mass assignable.

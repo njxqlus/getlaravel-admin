@@ -17,11 +17,11 @@ class UserController extends Controller {
     {
         $collection = User::all();
 
-        $fields = ['name', 'created_at'];
+        $fields = User::showable();
 
-        $name = \Illuminate\Support\Str::plural(class_basename(User::class));
+        $title = User::name(true);
 
-        return view('cp.models.index', compact('collection', 'fields', 'name'));
+        return view('cp.models.index', compact('collection', 'fields', 'title'));
     }
 
     /**

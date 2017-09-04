@@ -4,15 +4,11 @@
 
         @foreach($fields as $field)
 
-            <th>
-                @lang('cp.'.$field)
-            </th>
+            <th>@lang('cp.'.$field)</th>
 
         @endforeach
 
-        <th>
-            @lang('cp.table-actions')
-        </th>
+        <th>@lang('cp.table-actions')</th>
 
     </tr>
     </thead>
@@ -24,13 +20,11 @@
 
             @foreach($fields as $field)
 
-                <td>
-                    {{ $item->$field }}
-                </td>
+                <td>{{ $item->$field }}</td>
 
             @endforeach
 
-            @include('cp.parts.table.actions', ['item' => $item])
+            @include('cp.models.table.actions', ['item' => $item])
 
         </tr>
 
