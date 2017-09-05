@@ -43,5 +43,4 @@ return [
     'delete'                      => 'Delete',
     'confirm_destroy'             => 'Are you sure?',
     'footer_right'                => 'Anything you want',
-    'footer_copyright'            => 'All right reserved',
 ];
