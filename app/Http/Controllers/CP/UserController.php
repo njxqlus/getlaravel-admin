@@ -5,6 +5,7 @@ namespace App\Http\Controllers\CP;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller {
 
@@ -15,9 +16,9 @@ class UserController extends Controller {
      */
     public function index()
     {
-        $collection = User::all();
+        $users = User::all();
 
-        return view('cp.users.index', compact('collection'));
+        return view('cp.users.index', compact('users'));
     }
 
     /**
@@ -27,7 +28,7 @@ class UserController extends Controller {
      */
     public function create()
     {
-        //
+        return view('cp.users.create');
     }
 
     /**
@@ -38,7 +39,18 @@ class UserController extends Controller {
      */
     public function store(Request $request)
     {
-        //
+        $this->validate(request(), [
+            'name'                  => 'required',
+            'email'                 => 'required|email',
+            'password'              => 'required|confirmed|min:5',
+            'password_confirmation' => 'required|min:5',
+        ]);
+        $user = $request->all();
+        $user['password'] = Hash::make($user['password']);
+
+        User::create($user);
+
+        return back()->with('success', 'User has been created!');
     }
 
     /**
@@ -60,7 +72,7 @@ class UserController extends Controller {
      */
     public function edit(User $user)
     {
-        //
+        return view('cp.users.edit', compact('user'));
     }
 
     /**
@@ -72,7 +84,13 @@ class UserController extends Controller {
      */
     public function update(Request $request, User $user)
     {
-        //
+        $this->validate(request(), [
+            'name'  => 'required',
+            'email' => 'required|email',
+        ]);
+        $user->update($request->all());
+
+        return redirect()->action('CP\UserController@show', $user)->with('success', 'User has been updated!');
     }
 
     /**
@@ -83,6 +101,8 @@ class UserController extends Controller {
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+
+        return redirect()->action('CP\UserController@index')->with('success', 'User has been deleted!');
     }
 }

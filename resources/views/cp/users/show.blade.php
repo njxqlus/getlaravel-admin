@@ -1,12 +1,11 @@
 @extends('cp.layouts.default')
 
-@section('page-title', 'User')
+@section('page-title', __('cp.user')." $user->name")
 
 @section('page-header')
 
-    <h1>
-        @lang('cp.user')
-        <small>{!! $user->name !!}</small>
+    <h1>@lang('cp.user')
+        <small>{{ $user->name }}</small>
     </h1>
 
 @endsection
@@ -15,33 +14,34 @@
 
     <div class="panel panel-default">
 
-        @php($fields = ['id', 'name', 'email', 'created_at', 'updated_at'])
+        <div class="panel-body">
 
-        @include('cp.parts.table.show', ['item' => $user, compact('fields')])
+            <table class="table table-responsive table-bordered table-striped">
+                <tbody>
+                <tr>
+                    <td>@lang('cp.id')</td>
+                    <td>{{ $user->id }}</td>
+                </tr>
+                <tr>
+                    <td>@lang('cp.name')</td>
+                    <td>{{ $user->name }}</td>
+                </tr>
+                <tr>
+                    <td>@lang('cp.email')</td>
+                    <td>{{ $user->email }}</td>
+                </tr>
+                <tr>
+                    <td>@lang('cp.created_at')</td>
+                    <td>{{ $user->created_at }}</td>
+                </tr>
+                <tr>
+                    <td>@lang('cp.updated_at')</td>
+                    <td>{{ $user->updated_at }}</td>
+                </tr>
+                </tbody>
+            </table>
 
-    </div>
-
-    <h3>
-        @lang('cp.roles')
-    </h3>
-
-    <div class="panel panel-default">
-
-        @php($fields = ['id', 'name', 'display_name', 'description', 'created_at'])
-
-        @include('cp.parts.table.index', ['collection' => $user->roles()], compact('fields'))
-
-    </div>
-
-    <h3>
-        @lang('cp.permissions')
-    </h3>
-
-    <div class="panel panel-default">
-
-        @php($fields = ['id', 'name', 'display_name', 'description', 'created_at'])
-
-        @include('cp.parts.table.index', ['collection' => $user->permissions()], compact('fields'))
+        </div>
 
     </div>
 

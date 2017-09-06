@@ -12,7 +12,6 @@
 */
 
 
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -22,17 +21,18 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['prefix' => 'cp'], function(){
+Route::get('cp', 'CPController@index')->name('cp');
 
-	Route::get('/', 'CPController@index')->name('cp');
+Route::group(['prefix' => 'cp', 'as' => 'cp.'], function ()
+{
+    Route::group(['prefix' => 'rbac', 'as' => 'rbac.'], function ()
+    {
 
-	Route::group(['prefix' => 'rbac'], function(){
+        Route::resource('roles', 'CP\RBAC\RoleController');
 
-		Route::resource('roles', 'CP\RBAC\RoleController');
+        Route::resource('permissions', 'CP\RBAC\PermissionController');
 
-		Route::resource('permissions', 'CP\RBAC\PermissionController');
-
-	});
+    });
 
     Route::resource('users', 'CP\UserController');
 });

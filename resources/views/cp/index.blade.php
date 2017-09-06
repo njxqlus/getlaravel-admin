@@ -4,10 +4,7 @@
 
 @section('page-header')
 
-    <h1>
-        Page Header
-        <small>Optional description</small>
-    </h1>
+    <h1>Page Header<small>Optional description</small></h1>
 
 @endsection
 

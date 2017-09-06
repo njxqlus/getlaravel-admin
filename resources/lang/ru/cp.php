@@ -3,6 +3,7 @@ return [
     'full_name'                   => 'Полное имя',
     'email'                       => 'Email',
     'password'                    => 'Пароль',
+    'password_confirmation'       => 'Подтверждение пароля',
     'retype_password'             => 'Подтвердить пароль',
     'remember_me'                 => 'Запомнить меня',
     'register'                    => 'Зарегистрироваться',
@@ -43,4 +44,10 @@ return [
     'delete'                      => 'Удалить',
     'confirm_destroy'             => 'Вы уверены?',
     'footer_right'                => 'Все, что захотите',
+    'error'                       => 'Ошибка',
+    'success'                     => 'Успех',
+    'save'                        => 'Сохранить',
+    'create'                      => 'Создать',
+    'user_create'                 => 'Создать пользователя',
+    'user_edit'                   => 'Изменить пользователя',
 ];

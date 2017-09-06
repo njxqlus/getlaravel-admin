@@ -1,12 +1,10 @@
 @extends('cp.layouts.default')
 
-@section('page-title', 'Users')
+@section('page-title', __('cp.users'))
 
 @section('page-header')
 
-    <h1>
-        @lang('cp.users')
-    </h1>
+    <h1>@lang('cp.users')</h1>
 
 @endsection
 
@@ -14,9 +12,11 @@
 
     <div class="panel panel-default">
 
-        @php($fields = ['id', 'name', 'email', 'created_at'])
+        <div class="panel-body">
 
-        @include('cp.parts.table.index', compact('collection', 'fields'))
+            @include('cp.users.table')
+
+        </div>
 
     </div>
 

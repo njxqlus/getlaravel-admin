@@ -3,6 +3,7 @@ return [
     'full_name'                   => 'Full name',
     'email'                       => 'Email',
     'password'                    => 'Password',
+    'password_confirmation'       => 'Password Confirmation',
     'retype_password'             => 'Retype password',
     'remember_me'                 => 'Remember Me',
     'register'                    => 'Register',
@@ -43,4 +44,10 @@ return [
     'delete'                      => 'Delete',
     'confirm_destroy'             => 'Are you sure?',
     'footer_right'                => 'Anything you want',
+    'error'                       => 'Error',
+    'success'                     => 'Success',
+    'save'                        => 'Save',
+    'create'                      => 'Create',
+    'user_create'                 => 'Create User',
+    'user_edit'                   => 'Edit User',
 ];

@@ -60,6 +60,8 @@
         <!-- Main content -->
         <section class="content">
 
+            @include('cp.parts.message')
+
             @yield('content')
 
         </section>
