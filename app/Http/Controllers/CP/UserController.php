@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\CP;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\User\UserCreateRequest;
+use App\Http\Requests\User\UserUpdateRequest;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller {
@@ -34,17 +35,11 @@ class UserController extends Controller {
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param UserCreateRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserCreateRequest $request)
     {
-        $this->validate(request(), [
-            'name'                  => 'required',
-            'email'                 => 'required|email',
-            'password'              => 'required|confirmed|min:5',
-            'password_confirmation' => 'required|min:5',
-        ]);
         $user = $request->all();
         $user['password'] = Hash::make($user['password']);
 
@@ -78,16 +73,12 @@ class UserController extends Controller {
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param UserUpdateRequest $request
      * @param  \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(UserUpdateRequest $request, User $user)
     {
-        $this->validate(request(), [
-            'name'  => 'required',
-            'email' => 'required|email',
-        ]);
         $user->update($request->all());
 
         return redirect()->action('CP\UserController@show', $user)->with('success', 'User has been updated!');
