@@ -40,10 +40,7 @@ class UserController extends Controller {
      */
     public function store(UserCreateRequest $request)
     {
-        $user = $request->all();
-        $user['password'] = Hash::make($user['password']);
-
-        User::create($user);
+        User::create($request->all());
 
         return back()->with('success', 'User has been created!');
     }
