@@ -41,7 +41,7 @@ class UserController extends Controller {
     {
         User::create($request->all());
 
-        return back()->with('success', 'User has been created!');
+        return back()->with('success', __('messages.create'));
     }
 
     /**
@@ -77,7 +77,7 @@ class UserController extends Controller {
     {
         $user->update($request->all());
 
-        return redirect()->action('CP\UserController@show', $user)->with('success', 'User has been updated!');
+        return redirect()->action('CP\UserController@show', $user)->with('success', __('messages.update'));
     }
 
     /**
@@ -90,6 +90,6 @@ class UserController extends Controller {
     {
         $user->delete();
 
-        return redirect()->action('CP\UserController@index')->with('success', 'User has been deleted!');
+        return redirect()->action('CP\UserController@index')->with('success', __('messages.delete'));
     }
 }
