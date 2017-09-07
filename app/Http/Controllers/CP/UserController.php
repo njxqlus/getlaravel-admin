@@ -39,9 +39,9 @@ class UserController extends Controller {
      */
     public function store(UserCreateRequest $request)
     {
-        User::create($request->all());
+        $user = User::create($request->all());
 
-        return back()->with('success', __('messages.create'));
+        return redirect()->action('CP\UserController@show', $user)->with('success', __('messages.create'));
     }
 
     /**

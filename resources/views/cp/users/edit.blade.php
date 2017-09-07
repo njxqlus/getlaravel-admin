@@ -1,6 +1,6 @@
 @extends('cp.layouts.default')
 
-@section('page-title', __('cp.user_edit'))
+@section('page-title', __('cp.edit').": ".__('cp.user')." $user->name")
 
 @section('page-header')
 

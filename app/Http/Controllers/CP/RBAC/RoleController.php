@@ -39,9 +39,9 @@ class RoleController extends Controller {
      */
     public function store(RoleCreateRequest $request)
     {
-        Role::create($request->all());
+        $role = Role::create($request->all());
 
-        return back()->with('success', __('messages.create'));
+        return redirect()->action('CP\RBAC\RoleController@show', $role)->with('success', __('messages.create'));
     }
 
     /**
