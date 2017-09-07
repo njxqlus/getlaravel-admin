@@ -12,6 +12,16 @@
 
 @section('content')
 
+    <div class="panel panel-info">
+
+        <div class="panel-body">
+
+            @include('cp.parts.actions', ['controller'=>'CP\UserController', 'object'=>$user])
+
+        </div>
+
+    </div>
+
     <div class="panel panel-default">
 
         <div class="panel-body">

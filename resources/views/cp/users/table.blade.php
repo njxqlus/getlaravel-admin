@@ -15,9 +15,7 @@
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
             <td>{{ $user->created_at }}</td>
-
-            @include('cp.parts.table.actions', ['controller'=>'CP\UserController', 'object'=>$user])
-
+            <td>@include('cp.parts.actions', ['controller'=>'CP\UserController', 'object'=>$user, 'action'=>'table'])</td>
         </tr>
     @endforeach
     </tbody>

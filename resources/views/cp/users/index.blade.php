@@ -14,6 +14,16 @@
 
         <div class="panel-body">
 
+            @include('cp.parts.actions', ['controller'=>'CP\UserController'])
+
+        </div>
+
+    </div>
+
+    <div class="panel panel-default">
+
+        <div class="panel-body">
+
             @include('cp.users.table')
 
         </div>

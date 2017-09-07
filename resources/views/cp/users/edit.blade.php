@@ -16,6 +16,16 @@
 
         <div class="panel-body">
 
+            @include('cp.parts.actions', ['controller'=>'CP\UserController', 'object'=>$user])
+
+        </div>
+
+    </div>
+
+    <div class="panel panel-default">
+
+        <div class="panel-body">
+
             <form action="{{ action('CP\UserController@update', $user) }}" method="POST">
 
                 <input type="hidden" name="_method" value="PUT">
