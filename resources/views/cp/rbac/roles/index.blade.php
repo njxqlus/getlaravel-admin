@@ -1,10 +1,10 @@
 @extends('cp.layouts.default')
 
-@section('page-title', __('cp.users'))
+@section('page-title', __('cp.roles'))
 
 @section('page-header')
 
-    <h1>@lang('cp.users')</h1>
+    <h1>@lang('cp.roles')</h1>
 
 @endsection
 
@@ -14,7 +14,7 @@
 
         <div class="panel-body">
 
-            @include('cp.parts.actions', ['controller'=>'CP\UserController'])
+            @include('cp.parts.actions', ['controller'=>'CP\RBAC\RoleController'])
 
         </div>
 
@@ -24,7 +24,7 @@
 
         <div class="panel-body">
 
-            @include('cp.users.table')
+            @include('cp.rbac.roles.table')
 
         </div>
 

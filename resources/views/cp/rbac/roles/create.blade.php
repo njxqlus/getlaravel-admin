@@ -1,6 +1,6 @@
 @extends('cp.layouts.default')
 
-@section('page-title', __('cp.user_create'))
+@section('page-title', __('cp.create').": ".__('cp.role'))
 
 @section('page-header')
 
@@ -14,7 +14,7 @@
 
         <div class="panel-body">
 
-            @include('cp.parts.actions', ['controller'=>'CP\UserController'])
+            @include('cp.parts.actions', ['controller'=>'CP\RBAC\RoleController'])
 
         </div>
 
@@ -24,7 +24,7 @@
 
         <div class="panel-body">
 
-            <form action="{{ action('CP\UserController@store') }}" method="POST">
+            <form action="{{ action('CP\RBAC\RoleController@store') }}" method="POST">
 
                 {{ csrf_field() }}
 
@@ -35,22 +35,15 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="email">@lang('cp.email')</label>
-                    <input type="email" id="email" name="email" placeholder="@lang('cp.email')"
-                           value="{{ old('email') }}" class="form-control">
+                    <label for="display_name">@lang('cp.display_name')</label>
+                    <input type="text" id="display_name" name="display_name" placeholder="@lang('cp.display_name')"
+                           value="{{ old('display_name') }}" class="form-control">
                 </div>
 
                 <div class="form-group">
-                    <label for="password">@lang('cp.password')</label>
-                    <input type="password" id="password" name="password" placeholder="@lang('cp.password')"
-                           class="form-control">
-                </div>
-
-                <div class="form-group">
-                    <label for="password_confirmation">@lang('cp.password_confirmation')</label>
-                    <input type="password" id="password_confirmation" name="password_confirmation"
-                           placeholder="@lang('cp.password_confirmation')"
-                           class="form-control">
+                    <label for="description">@lang('cp.description')</label>
+                    <textarea id="description" name="description" placeholder="@lang('cp.description')"
+                              class="form-control">{{ old('description') }}</textarea>
                 </div>
 
                 <div class="form-group pull-right">
