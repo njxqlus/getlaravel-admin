@@ -32,6 +32,10 @@
 
 - Add less css to webpack
 
+- [Create resources](#create-resources)
+
+- Add actions view part with show/delete/edit/create new/return to index buttons to easy use in other views 
+
 #### AdminLTE integration
 
 ##### Integration of starter.html to laravel blade's files
@@ -59,6 +63,13 @@
 - Edit Member since string, add real created_ad with Carbon
 - Edit company name and current year in footer
 - Include external Bootstrap and iCheck from npm
+
+#### Create resources
+
+- Create Role and Permission models
+- Create User, Role and Permission controllers and requests
+- Create User, Role and Permission views
+- Add some translations
 
 
 ## Installation
