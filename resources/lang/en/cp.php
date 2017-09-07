@@ -48,8 +48,6 @@ return [
     'success'                     => 'Success',
     'save'                        => 'Save',
     'create'                      => 'Create',
-    'user_create'                 => 'Create User',
-    'user_edit'                   => 'Edit User',
     'create_new'                  => 'Create New',
     'return_to_index'             => 'Return to Index',
 ];
