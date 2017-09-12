@@ -41,7 +41,7 @@ class PermissionController extends Controller {
     {
         $permission = Permission::create($request->all());
 
-        return redirect()->action('CP\RBAC\PermissionController@show', $permission)->with('success', 'messages.create');
+        return redirect()->action('CP\RBAC\PermissionController@show', $permission)->with('success', __('messages.create'));
     }
 
     /**
@@ -77,7 +77,7 @@ class PermissionController extends Controller {
     {
         $permission->update($request->all());
 
-        return redirect()->action('CP\RBAC\PermissionController@show', $permission)->with('success', 'messages.update');
+        return redirect()->action('CP\RBAC\PermissionController@show', $permission)->with('success', __('messages.update'));
     }
 
     /**
@@ -90,6 +90,6 @@ class PermissionController extends Controller {
     {
         $permission->delete();
 
-        return redirect()->action('CP\RBAC\PermissionController@index')->with('success', 'messages.delete');
+        return redirect()->action('CP\RBAC\PermissionController@index')->with('success', __('messages.delete'));
     }
 }
