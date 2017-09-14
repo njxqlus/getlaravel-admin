@@ -11,20 +11,28 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-    // .sass('resources/assets/sass/app.scss', 'public/css')
-    .less('resources/assets/sass/app.less', 'public/css')
+mix.js('resources/assets/js/app.js', 'public/js');
+mix.less('resources/assets/less/app.less', 'public/css');
 
-    //Bootstrap
-    .copyDirectory('node_modules/bootstrap/dist', 'public/vendor/bootstrap')
+//Bootstrap
+mix.copyDirectory('node_modules/bootstrap/dist', 'public/vendor/bootstrap');
 
-    //jQuery
-    .copy('node_modules/jquery/dist/jquery.min.js', 'public/vendor/jquery/jquery.min.js')
+//jQuery
+mix.copy('node_modules/jquery/dist/jquery.min.js', 'public/vendor/jquery/jquery.min.js');
 
-    //Admin-LTE
-    .copyDirectory('node_modules/admin-lte/dist', 'public/vendor/admin-lte')
+//Admin-LTE
+mix.copyDirectory('node_modules/admin-lte/dist', 'public/vendor/admin-lte');
 
-    //iCheck
-    .copy('node_modules/icheck/icheck.min.js', 'public/vendor/icheck/icheck.min.js')
-    .copyDirectory('node_modules/icheck/skins', 'public/vendor/icheck/skins')
-;
+//iCheck
+mix.copy('node_modules/icheck/icheck.min.js', 'public/vendor/icheck/icheck.min.js');
+mix.copyDirectory('node_modules/icheck/skins', 'public/vendor/icheck/skins');
+
+//Font Awesome
+mix.copyDirectory('node_modules/font-awesome/css', 'public/vendor/font-awesome/css');
+mix.copyDirectory('node_modules/font-awesome/fonts', 'public/vendor/font-awesome/fonts');
+
+//HTML5 Shiv
+mix.copy('node_modules/html5shiv/dist/html5shiv.min.js', 'public/vendor/html5shiv/html5shiv.min.js');
+
+//Respond.js
+mix.copy('node_modules/respond.js/dest/respond.min.js', 'public/vendor/respond.js/respond.min.js');

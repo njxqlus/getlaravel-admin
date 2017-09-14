@@ -12,8 +12,18 @@
   "devDependencies": {
     "axios": "^0.16.2",
     "cross-env": "^5.0.1",
-    "laravel-mix": "^1.0",
+    "laravel-mix": "^1.4.3",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.5",
     "lodash": "^4.17.4"
   },
-  "dependencies": []
+  "dependencies": {
+    "admin-lte": "^2.3.11",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "html5shiv": "^3.7.3",
+    "icheck": "^1.0.2",
+    "jquery": "^3.2.1",
+    "respond.js": "^1.4.2"
+  }
 }

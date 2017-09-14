@@ -2,5 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/vendor/jquery/jquery.min.js": "/vendor/jquery/jquery.min.js",
-    "/vendor/icheck/icheck.min.js": "/vendor/icheck/icheck.min.js"
+    "/vendor/icheck/icheck.min.js": "/vendor/icheck/icheck.min.js",
+    "/vendor/html5shiv/html5shiv.min.js": "/vendor/html5shiv/html5shiv.min.js",
+    "/vendor/respond.js/respond.min.js": "/vendor/respond.js/respond.min.js"
 }
