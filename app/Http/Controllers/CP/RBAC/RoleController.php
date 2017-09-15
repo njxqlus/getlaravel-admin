@@ -76,6 +76,7 @@ class RoleController extends Controller {
     public function update(RoleUpdateRequest $request, Role $role)
     {
         $role->update($request->all());
+        $role->permissions()->sync($request->input('permissions'));
 
         return redirect()->action('CP\RBAC\RoleController@show', $role)->with('success', __('messages.update'));
     }

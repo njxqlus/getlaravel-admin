@@ -22,15 +22,15 @@
 
     </div>
 
-    <div class="panel panel-default">
+    <form action="{{ action('CP\RBAC\RoleController@update', $role) }}" method="POST">
 
-        <div class="panel-body">
+        <input type="hidden" name="_method" value="PUT">
 
-            <form action="{{ action('CP\RBAC\RoleController@update', $role) }}" method="POST">
+        {{ csrf_field() }}
 
-                <input type="hidden" name="_method" value="PUT">
+        <div class="panel panel-default">
 
-                {{ csrf_field() }}
+            <div class="panel-body">
 
                 <div class="form-group">
                     <label for="name">@lang('cp.name')</label>
@@ -55,10 +55,40 @@
                     <button class="btn btn-primary">@lang('cp.save')</button>
                 </div>
 
-            </form>
+
+            </div>
 
         </div>
 
-    </div>
+
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+                @lang('cp.permissions')
+            </div>
+
+            <div class="panel-body">
+
+
+                <div class="form-group">
+                    @foreach(\App\Models\RBAC\Permission::all() as $permission)
+                        @php
+                            $role->hasPermission($permission->name) ? $checked = ' checked': $checked = '';
+                        @endphp
+                        <label><input type="checkbox" name="permissions[]" value="{{ $permission->id }}"
+                                      title="{{ $permission->display_name }}"{{ $checked }}> {{ $permission->display_name }}
+                        </label><br>
+                    @endforeach
+                </div>
+
+                <div class="form-group pull-right">
+                    <button class="btn btn-primary">@lang('cp.save')</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
 
 @endsection
