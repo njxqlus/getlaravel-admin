@@ -20,13 +20,13 @@
 
     </div>
 
-    <div class="panel panel-default">
+    <form action="{{ action('CP\RBAC\PermissionController@store') }}" method="POST">
 
-        <div class="panel-body">
+        {{ csrf_field() }}
 
-            <form action="{{ action('CP\RBAC\PermissionController@store') }}" method="POST">
+        <div class="panel panel-default">
 
-                {{ csrf_field() }}
+            <div class="panel-body">
 
                 <div class="form-group">
                     <label for="name">@lang('cp.name')</label>
@@ -50,10 +50,36 @@
                     <button class="btn btn-primary">@lang('cp.create')</button>
                 </div>
 
-            </form>
+
+            </div>
 
         </div>
 
-    </div>
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+                @lang('cp.roles')
+            </div>
+
+            <div class="panel-body">
+
+                <div class="form-group">
+                    @foreach(\App\Models\RBAC\Role::all() as $role)
+                        <label><input type="checkbox" name="roles[]" value="{{ $role->id }}"
+                                      title="{{ $role->display_name }}"> {{ $role->display_name }}
+                        </label>
+                        <br>
+                    @endforeach
+                </div>
+
+                <div class="form-group pull-right">
+                    <button class="btn btn-primary">@lang('cp.create')</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
 
 @endsection

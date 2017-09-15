@@ -40,6 +40,7 @@ class PermissionController extends Controller {
     public function store(PermissionCreateRequest $request)
     {
         $permission = Permission::create($request->all());
+        $permission->roles()->sync($request->input('roles'));
 
         return redirect()->action('CP\RBAC\PermissionController@show', $permission)->with('success', __('messages.create'));
     }
