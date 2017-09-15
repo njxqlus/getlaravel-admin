@@ -76,6 +76,9 @@ class UserController extends Controller {
     public function update(UserUpdateRequest $request, User $user)
     {
         $user->update($request->all());
+//        dd($request);
+        $user->roles()->sync($request->input('roles'));
+        $user->permissions()->sync($request->input('permissions'));
 
         return redirect()->action('CP\UserController@show', $user)->with('success', __('messages.update'));
     }

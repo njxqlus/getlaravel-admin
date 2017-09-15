@@ -55,4 +55,45 @@
 
     </div>
 
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+                    @lang('cp.roles')
+                </div>
+
+                <div class="panel-body">
+                    <ul>
+                        @foreach($user->roles as $role)
+                            <li>
+                                <a href="{{ action('CP\RBAC\RoleController@show', $role) }}">{{ $role->display_name }}</a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+                    @lang('cp.permissions')
+                </div>
+
+                <div class="panel-body">
+                    <ul>
+                        @foreach($user->permissions as $permission)
+                            <li>
+                                <a href="{{ action('CP\RBAC\PermissionController@show', $permission) }}">{{ $permission->display_name }}</a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 @endsection
