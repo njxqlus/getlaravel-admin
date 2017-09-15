@@ -76,6 +76,7 @@ class PermissionController extends Controller {
     public function update(PermissionUpdateRequest $request, Permission $permission)
     {
         $permission->update($request->all());
+        $permission->roles()->sync($request->input('roles'));
 
         return redirect()->action('CP\RBAC\PermissionController@show', $permission)->with('success', __('messages.update'));
     }

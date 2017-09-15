@@ -73,7 +73,7 @@
                 <div class="form-group">
                     @foreach(\App\Models\RBAC\Permission::all() as $permission)
                         @php
-                            $role->hasPermission($permission->name) ? $checked = ' checked': $checked = '';
+                            $checked = $role->hasPermission($permission->name) ? ' checked': '';
                         @endphp
                         <label><input type="checkbox" name="permissions[]" value="{{ $permission->id }}"
                                       title="{{ $permission->display_name }}"{{ $checked }}> {{ $permission->display_name }}

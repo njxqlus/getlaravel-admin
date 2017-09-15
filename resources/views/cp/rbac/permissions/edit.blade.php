@@ -22,19 +22,20 @@
 
     </div>
 
-    <div class="panel panel-default">
+    <form action="{{ action('CP\RBAC\PermissionController@update', $permission) }}" method="POST">
 
-        <div class="panel-body">
+        <input type="hidden" name="_method" value="PUT">
 
-            <form action="{{ action('CP\RBAC\PermissionController@update', $permission) }}" method="POST">
+        {{ csrf_field() }}
 
-                <input type="hidden" name="_method" value="PUT">
+        <div class="panel panel-default">
 
-                {{ csrf_field() }}
+            <div class="panel-body">
 
                 <div class="form-group">
                     <label for="name">@lang('cp.name')</label>
-                    <input type="text" id="name" name="name" value="{{ $permission->name }}" placeholder="@lang('cp.name')"
+                    <input type="text" id="name" name="name" value="{{ $permission->name }}"
+                           placeholder="@lang('cp.name')"
                            class="form-control">
                 </div>
 
@@ -55,10 +56,38 @@
                     <button class="btn btn-primary">@lang('cp.save')</button>
                 </div>
 
-            </form>
+            </div>
 
         </div>
 
-    </div>
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+                @lang('cp.roles')
+            </div>
+
+            <div class="panel-body">
+
+                <div class="form-group">
+                    @foreach(\App\Models\RBAC\Role::all() as $role)
+                        @php
+                            $checked = $role->hasPermission($permission->name) ? ' checked': '';
+                        @endphp
+                        <label><input type="checkbox" name="roles[]" value="{{ $role->id }}"
+                                      title="{{ $role->display_name }}"{{ $checked }}> {{ $role->display_name }}
+                        </label>
+                        <br>
+                    @endforeach
+                </div>
+
+                <div class="form-group pull-right">
+                    <button class="btn btn-primary">@lang('cp.save')</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
 
 @endsection

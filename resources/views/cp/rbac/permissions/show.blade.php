@@ -59,4 +59,23 @@
 
     </div>
 
+    <div class="panel panel-default">
+
+        <div class="panel-heading">
+            @lang('cp.roles')
+        </div>
+
+        <div class="panel-body">
+
+            <ul>
+                @foreach($permission->roles as $role)
+                    <li>
+                        <a href="{{ action('CP\RBAC\RoleController@show', $role) }}">{{ $role->display_name }}</a>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+
+    </div>
+
 @endsection
