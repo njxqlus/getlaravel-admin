@@ -40,6 +40,8 @@ class UserController extends Controller {
     public function store(UserCreateRequest $request)
     {
         $user = User::create($request->all());
+        $user->roles()->sync($request->input('roles'));
+        $user->permissions()->sync($request->input('permissions'));
 
         return redirect()->action('CP\UserController@show', $user)->with('success', __('messages.create'));
     }
