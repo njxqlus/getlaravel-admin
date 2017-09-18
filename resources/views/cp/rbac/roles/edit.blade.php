@@ -69,7 +69,6 @@
 
             <div class="panel-body">
 
-
                 <div class="form-group">
                     @foreach(\App\Models\RBAC\Permission::all() as $permission)
                         @php
