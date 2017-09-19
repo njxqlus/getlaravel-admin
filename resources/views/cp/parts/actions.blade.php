@@ -47,6 +47,9 @@
         <a href="{{ action("$controller@index") }}" class="btn btn-default btn-sm"><i
                     class="fa fa-list"></i> @lang('cp.return_to_index')</a>
 
+        <a href="{{ action("$controller@show", $object) }}" class="btn btn-default btn-sm">
+            <i class="fa fa-eye"></i> @lang('cp.show')</a>
+
         <a href="{{ action("$controller@create") }}" class="btn btn-default btn-sm"><i
                     class="fa fa-plus"></i> @lang('cp.create_new')</a>
 
