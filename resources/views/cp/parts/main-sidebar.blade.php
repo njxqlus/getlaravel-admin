@@ -4,17 +4,23 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
 
-        <!-- Sidebar user panel (optional) -->
-        <div class="user-panel">
-            <div class="pull-left image">
-                <img src="{{asset('vendor/admin-lte/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
-            </div>
-            <div class="pull-left info">
-                <p>{{ Auth::user()->name }}</p>
-                <!-- Status -->
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>
-        </div>
+        <!-- Profile menu -->
+        <ul class="sidebar-menu">
+            <li class="treeview">
+                <a href="#"><i class="fa fa-user-circle-o"></i> <span>{{ Auth::user()->name }}</span>
+                    <span class="pull-right-container"><i class="fa fa-angle-double-down pull-right"></i></span>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="padding: 10px;">
+                            {{ csrf_field() }}
+                            <button type="submit" class="btn btn-danger btn-xs btn-flat"><i
+                                        class="fa fa-sign-out"></i> @lang('cp.sign_out')</button>
+                        </form>
+                    </li>
+                </ul>
+            </li>
+        </ul>
 
         <!-- search form (Optional) -->
         <form action="#" method="get" class="sidebar-form">
