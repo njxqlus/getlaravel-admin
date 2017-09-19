@@ -44,7 +44,7 @@
         <section class="content-header">
 
             @yield('page-header')
-            
+
         </section>
 
         <section class="content">
@@ -58,8 +58,6 @@
     </div>
 
     @include('cp.parts.footer')
-
-    @include('cp.parts.control-sidebar')
 
 </div>
 
