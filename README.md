@@ -1,6 +1,6 @@
 # Laravel starter kit with admin
 
-[![Packagist](https://img.shields.io/packagist/v/njxqlus/getlaravel-admin.svg?style=flat-square)](https://packagist.org/packages/njxqlus/getlaravel-admin)
+[![Packagist](https://img.shields.io/packagist/v/njxqlus/getlaravel.svg?style=flat-square)](https://packagist.org/packages/njxqlus/getlaravel-admin)
 
 ![Screenshot](screenshot.png "Screenshot")
 
