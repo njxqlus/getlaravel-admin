@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{ asset('vendor/admin-lte/css/AdminLTE.min.css') }}">
 
     <!-- AdminLTE Skins -->
-    <link rel="stylesheet" href="{{ asset('vendor/admin-lte/css/skins/skin-blue.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/admin-lte/css/skins/skin-red.min.css') }}">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,7 +34,7 @@
     @yield('css')
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-red sidebar-mini">
 <div class="wrapper">
 
 @include('cp.parts.header')

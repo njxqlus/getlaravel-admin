@@ -12,5 +12,5 @@
             <span class="sr-only">@lang('cp.toggle_navigation')</span>
         </a>
     </nav>
-    
+
 </header>
