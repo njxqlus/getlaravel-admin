@@ -44,9 +44,7 @@
         <section class="content-header">
 
             @yield('page-header')
-
-            @include('cp.parts.breadcrumbs')
-
+            
         </section>
 
         <section class="content">
