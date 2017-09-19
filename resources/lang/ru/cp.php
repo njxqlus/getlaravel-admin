@@ -50,4 +50,5 @@ return [
     'create'                      => 'Создать',
     'create_new'                  => 'Создать',
     'return_to_index'             => 'Вернуться к оглавлению',
+    'navigation'                  => 'Навигация',
 ];

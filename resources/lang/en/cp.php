@@ -50,4 +50,5 @@ return [
     'create'                      => 'Create',
     'create_new'                  => 'Create New',
     'return_to_index'             => 'Return to Index',
+    'navigation'                  => 'Navigation',
 ];
