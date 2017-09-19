@@ -79,8 +79,10 @@
 
     @yield('content')
 </div>
+<!-- jQuery -->
+<script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
 
-<!-- Bootstrap -->
+<!-- Bootstrap 3.3.7 -->
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 
 <!-- Scripts -->
