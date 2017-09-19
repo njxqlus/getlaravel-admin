@@ -16,7 +16,6 @@ return [
     'sign_up_using_facebook'      => 'Sign up using Facebook',
     'sign_up_using_google_plus'   => 'Sign up using Google+',
     'sign_out'                    => 'Sign Out',
-    'profile'                     => 'Profile',
     'toggle_navigation'           => 'Toggle navigation',
     'login_message'               => 'Sign in to start your session',
     'register_message'            => 'Register a new membership',

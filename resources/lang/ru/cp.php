@@ -16,7 +16,6 @@ return [
     'sign_up_using_facebook'      => 'Зарегистирроваться через Facebook',
     'sign_up_using_google_plus'   => 'Зарегистрироваться через Google+',
     'sign_out'                    => 'Выйти',
-    'profile'                     => 'Профиль',
     'toggle_navigation'           => 'Открыть меню',
     'login_message'               => 'Войти в аккаунт',
     'register_message'            => 'Зарегистрироваться',
