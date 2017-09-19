@@ -2,6 +2,8 @@
 
 [![Packagist](https://img.shields.io/packagist/v/njxqlus/getlaravel-admin.svg?style=flat-square)](https://packagist.org/packages/njxqlus/getlaravel-admin)
 
+![Screenshot](screenshot.png "Screenshot")
+
 ## What's inside?
 
 - Laravel 5.5 dev version
@@ -52,7 +54,7 @@
 ##### Localization
 
 - Localize auth views (add @lang on blade templates and create admin-lte localization file)
-- Localize some admin-lte strings like sign out, profile etc.
+- Localize some admin-lte strings like sign out
 - Add ru translation
 
 ##### Other small things
@@ -60,9 +62,8 @@
 - Add CSRF token to forms
 - Make Sign Out button workable
 - Change name to {{ Auth::user()->name }} (your name)
-- Edit Member since string, add real created_ad with Carbon
-- Edit company name and current year in footer
-- Include external Bootstrap and iCheck from npm
+- Edit company name in footer
+- Include external Bootstrap, iCheck and other libraries from npm
 
 #### Create resources
 
@@ -117,6 +118,12 @@
 ## Usage
 
 Let's build something awesome!
+
+Admin based on `/cp` route
+
+## What's next?
+
+- Setup permissions
 
 ## Credits
 
