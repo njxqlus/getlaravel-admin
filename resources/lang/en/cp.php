@@ -42,7 +42,6 @@ return [
     'edit'                        => 'Edit',
     'delete'                      => 'Delete',
     'confirm_destroy'             => 'Are you sure?',
-    'footer_right'                => 'Anything you want',
     'error'                       => 'Error',
     'success'                     => 'Success',
     'save'                        => 'Save',
