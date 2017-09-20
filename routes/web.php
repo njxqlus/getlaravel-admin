@@ -23,7 +23,7 @@ Route::get('home', 'HomeController@index')->name('home');
 
 Route::get('cp', 'CPController@index')->name('cp');
 
-Route::group(['prefix' => 'cp', 'as' => 'cp.'], function ()
+Route::group(['prefix' => 'cp', 'as' => 'cp.', 'middleware' => 'auth'], function ()
 {
     Route::group(['prefix' => 'rbac', 'as' => 'rbac.'], function ()
     {
