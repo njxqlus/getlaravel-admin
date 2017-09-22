@@ -95,12 +95,13 @@
                         <div class="form-group">
                             @foreach(\App\Models\RBAC\Permission::all() as $permission)
                                 @php
-                                    foreach ($user->permissions as $direct_permission){
-                                        if ($direct_permission->name == $permission->name) {
-                                        $checked = ' checked';
-                                        break;
-                                        } else $checked = '';
-                                    }
+                                    $checked = '';
+                                        foreach ($user->permissions as $direct_permission){
+                                            if ($direct_permission->name == $permission->name) {
+                                            $checked = ' checked';
+                                            break;
+                                            } else $checked = '';
+                                        }
                                 @endphp
                                 <label><input type="checkbox" name="permissions[]" value="{{ $permission->id }}"
                                               title="{{ $permission->display_name }}"{{ $checked }}> {{ $permission->display_name }}
